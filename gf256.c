@@ -84,6 +84,11 @@ uint8_t brute_invert_poly(uint8_t poly)
     return(loop);
 }
 
+uint8_t div_poly(uint8_t polyA, uint8_t polyB)
+{
+    return(mult_poly(polyA, brute_invert_poly(polyB)));
+}
+
 
 /* private function(s) */
 /* ------------------- */

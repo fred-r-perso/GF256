@@ -7,6 +7,7 @@
 void test_degree();
 void test_mult();
 void test_brute_invert();
+void test_div();
 
 /* test routine */
 /* ------------ */
@@ -17,6 +18,8 @@ int main()
     test_mult();
 
     test_brute_invert();
+
+    test_div();
 
     return(0);
 }
@@ -220,4 +223,82 @@ void test_brute_invert()
     }   
 
     printf("\n test_brute_invert : %u PASS - %u FAIL\n", pass, fail );     
+}
+
+void test_div()
+{
+    uint8_t pass =0;
+    uint8_t fail = 0;
+
+    uint8_t polyA = 0x06;    /* X² + X */
+    uint8_t polyB = 0x03;    /* X + 1 */
+    uint8_t polyAdivB = 0x02; /* X */
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyB = polyA;
+    polyAdivB = 1;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyA = 0x1B;    
+    polyB = 0x05;    
+    polyAdivB = 0x07;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyA = 255;    
+    polyB = 128;    
+    polyAdivB = 0b01111111;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyA = 104;    
+    polyB = 32;    
+    polyAdivB = 0b11001000;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+
+    printf("\n test_div : %u PASS - %u FAIL\n", pass, fail );
 }

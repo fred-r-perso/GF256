@@ -17,3 +17,6 @@ uint8_t mult_poly(uint8_t polyA, uint8_t polyB);
 
 /* Brute force inversion of a polynomial */
 uint8_t brute_invert_poly(uint8_t poly);
+
+/* Divide polynoms in GF(256) : polyA / polyB */
+uint8_t div_poly(uint8_t polyA, uint8_t polyB);
