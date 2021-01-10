@@ -1,0 +1,7 @@
+ test_degree : 2 PASS - 0 FAIL
+
+ test_mult : 13 PASS - 0 FAIL
+
+ test_brute_invert : 1 PASS - 0 FAIL
+
+ test_div : 7 PASS - 0 FAIL
