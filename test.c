@@ -225,6 +225,50 @@ void test_mult()
         pass++;
     }    
 
+    polyA = 200;
+    polyB = 100;
+    polyAB = 0b10110101;
+
+    if (mult_poly(polyA, polyB) != polyAB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", mult_poly(polyA, polyB), polyAB);
+    }
+    else
+    {
+        pass++;
+    }    
+
+    polyA = 91;
+    polyB = 15;
+    polyAB = 0b01110100;
+
+    if (mult_poly(polyA, polyB) != polyAB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", mult_poly(polyA, polyB), polyAB);
+    }
+    else
+    {
+        pass++;
+    }    
+
+
+    polyA = 15;
+    polyB = 91;
+    polyAB = 0b01110100;
+
+    if (mult_poly(polyA, polyB) != polyAB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", mult_poly(polyA, polyB), polyAB);
+    }
+    else
+    {
+        pass++;
+    }    
+
+
     printf("\n test_mult : %u PASS - %u FAIL\n", pass, fail );    
 }
 
@@ -312,6 +356,34 @@ void test_div()
     polyA = 104;    
     polyB = 32;    
     polyAdivB = 0b11001000;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyA = 200;    
+    polyB = 100;    
+    polyAdivB = 0b00000010;
+
+    if (div_poly(polyA, polyB) != polyAdivB)
+    {
+        fail++;
+        printf("\n[error] : %x instead of %x\n", div_poly(polyA, polyB), polyAdivB);
+    }
+    else
+    {
+        pass++;
+    }
+
+    polyA = 12;
+    polyB = 100;    
+    polyAdivB = 0b01000001;
 
     if (div_poly(polyA, polyB) != polyAdivB)
     {
