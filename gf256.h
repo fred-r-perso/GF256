@@ -21,6 +21,8 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE. 
 */
+#ifndef GF256_H
+#define GF256_H
 
 #include <stdint.h>
 
@@ -44,3 +46,5 @@ uint8_t brute_invert_poly(uint8_t poly);
 
 /* Divide polynoms in GF(256) : polyA / polyB */
 uint8_t div_poly(uint8_t polyA, uint8_t polyB);
+
+#endif /* GF256_H */
